@@ -1,0 +1,13 @@
+/*  castlecss variable files */
+@import "<%= castleCssCorePath %>/sass/variables";
+
+/*  Your own variables so they overwrite the core */
+@import "variables";
+/*  rest of castle files */
+@import "<%= castleCssCorePath %>/sass/main";
+@import "<%= castleCssButtonsPath %>/sass/variables";
+@import "<%= castleCssNotificationsPath %>/sass/variables";
+
+/*  Include your own files below this line
+    --------------------------------------
+*/
