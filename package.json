@@ -1,0 +1,25 @@
+{
+  "name": "generator-castlecss",
+  "version": "0.0.1",
+  "description": "A generator for a CastleCSS boilerplate.",
+  "files": [
+    "app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timosnel/castlecss-generator.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "castlecss"
+  ],
+  "author": "Timo Snel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timosnel/castlecss-generator/issues"
+  },
+  "homepage": "https://github.com/timosnel/castlecss-generator#readme",
+  "dependencies": {
+    "yeoman-generator": "^0.24.1"
+  }
+}
