@@ -21,5 +21,8 @@
   "homepage": "https://github.com/timosnel/castlecss-generator#readme",
   "dependencies": {
     "yeoman-generator": "^0.24.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4"
   }
 }

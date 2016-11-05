@@ -7,7 +7,8 @@ module.exports = generators.Base.extend({
     },
 
     prompting: function () {
-        var prompts = [{
+        var prompts = [
+        {
             type    : 'input',
             name    : 'projectname',
             message : 'What is the name of your project?',
@@ -17,7 +18,7 @@ module.exports = generators.Base.extend({
             type    : 'list',
             name    : 'buildsystem',
             message : 'Which build system would you like to use?',
-            choices: [
+            choices : [
                 'gulp',
                 'grunt',
                 'none'
