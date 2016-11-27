@@ -15,6 +15,21 @@ module.exports = generators.Base.extend({
             default : this.appname // Defaults to the current folder name.
         },
         {
+            type    : 'checkbox',
+            name    : 'features',
+            message : 'Which features do you want to install?',
+            choices : [
+                {
+                    name    : 'castlecss-buttons',
+                    checked : true
+                },
+                {
+                    name    : 'castlecss-notifications',
+                    checked : true
+                }
+            ]
+        },
+        {
             type    : 'list',
             name    : 'buildsystem',
             message : 'Which build system would you like to use?',
@@ -26,8 +41,17 @@ module.exports = generators.Base.extend({
         }];
 
         return this.prompt(prompts).then(function (answers) {
+            
             this.projectname = answers.projectname;
             this.buildsystem = answers.buildsystem;
+
+            function hasFeature(feat) {
+                return answers.features && answers.features.indexOf(feat) !== -1;
+            }
+
+            this.includeButtons = hasFeature('castlecss-buttons');
+            this.includeNotifications = hasFeature('castlecss-notifications');
+
         }.bind(this));
 
     },
@@ -40,9 +64,11 @@ module.exports = generators.Base.extend({
         );
 
         this.fs.copyTpl(
-            this.templatePath('scss/main.scss'),
+            this.templatePath('scss/_main.scss'),
             this.destinationPath('scss/main.scss'),
             {
+                includeButtons: this.includeButtons,
+                includeNotifications: this.includeNotifications,
                 castleCssCorePath: 'node_modules/castlecss-core',
                 castleCssButtonsPath: 'node_modules/castlecss-buttons',
                 castleCssNotificationsPath: 'node_modules/castlecss-notifications'
