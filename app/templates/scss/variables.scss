@@ -1,11 +1,15 @@
-/* 	Variables 
+/*
+	Variables
 	EDIT YOUR SITE VARIABLES HERE
 */
 
-/* 
-	Base colors 
-	Color 01 and 02 reservered for white and black 
+/*
+	Base colors
+	Color 01 and 02 reservered for white and black
 */
+$color03: #eeeeee;
+$color04: #222222;
+$radius: 3px;
 
 /*	Theme colors */
 $theme01: 	#1B94BF;	// Knight blue
@@ -54,7 +58,8 @@ $margin-default: 	12px;
 $radius:	5px;
 
 /* Fonts */
-$font-pri: Arial, Helvetica, sans-serif;
-$font-sec: Arial, Helvetica, sans-serif;
+$font-pri: 'Open Sans', Helvetica, Arial;
+$font-sec: 'Open Sans', Helvetica, Arial;
+
 $font-size-default: 1.6rem;
 $line-height-default: 1.5;
