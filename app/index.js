@@ -17,7 +17,7 @@ module.exports = generators.Base.extend({
         {
             type    : 'checkbox',
             name    : 'features',
-            message : 'Which features do you want to install?',
+            message : 'Which optional features do you want to install?',
             choices : [
                 {
                     name    : 'castlecss-buttons',
