@@ -97,6 +97,14 @@ module.exports = generators.Base.extend({
     },
 
     install: function () {
-        this.npmInstall(['castlecss'], { 'save-dev': true });
+        this.npmInstall(['castlecss-core'], { 'save-dev': true });
+        
+        if (this.includeButtons) {
+            this.npmInstall(['castlecss-buttons'], { 'save-dev': true });
+        }
+
+        if (this.includeNotifications) {
+            this.npmInstall(['castlecss-notifications'], { 'save-dev': true });
+        }
     }
 });
