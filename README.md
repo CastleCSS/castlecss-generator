@@ -1,4 +1,4 @@
-# CastleCSS generator
+# CastleCSS generator (beta)
 This generator is based on [Yeoman](http://yeoman.io). It can generate a boilerplate for a 
 [CastleCSS](https://github.com/CastleCSS/) project. It gives more flexibility than the 
 [castlecss-boilerplate](https://github.com/CastleCSS/castlecss-boilerplate/) because the generator
