@@ -13,5 +13,5 @@ To use this generator, you must have NPM and Yeoman installed: ```npm install yo
 - Follow the prompt
 
 ## Contributing
-To use  the generator locally, use ```npm link``` in the root of the repo, and then use the 
-```yo``` command to select the generator.
+To use  the generator locally, use ```npm install <local-path-to-repo>``` in the root of the repo, and then
+ use the ```yo``` command to select the generator.
