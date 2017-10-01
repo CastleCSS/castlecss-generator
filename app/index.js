@@ -1,32 +1,35 @@
-var generators = require('yeoman-generator');
+'use strict';
+const Generator = require('yeoman-generator');
 
 function containsValue(array, value) {
   return array && array.indexOf(value) !== -1;
 }
 
-module.exports = generators.Base.extend({
+module.exports = class extends Generator {
 
-  constructor: function () {
-    generators.Base.apply(this, arguments);
+  constructor(args, opts) {
+    super(args, opts);
+
     this.option('projectname', {
       type: String,
       required: false,
       desc: "Name of the project."
     });
+
     this.option('features', {
       type: String,
       required: false,
       desc: "Comma-seperated list of optional features. Possible values: castlecss-options, castlecss-notifications"
     });
+
     this.option('buildsystem', {
       type: String,
       required: false,
       desc: "The build system to use. Possible values: grunt, gulp, none"
     });
-  },
+  }
 
-  prompting: function () {
-
+  prompting() {
     var prompts = [];
 
     // Only prompt if the value hasn't been passed as a command line option.
@@ -97,10 +100,9 @@ module.exports = generators.Base.extend({
         this.includeNotifications = containsValue(answers.features, 'castlecss-notifications');
       }
     }.bind(this));
+  }
 
-  },
-
-  writing: function () {
+  writing() {
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('package.json'),
@@ -138,9 +140,9 @@ module.exports = generators.Base.extend({
         );
         break;
     }
-  },
+  }
 
-  install: function () {
+  install() {
     this.npmInstall(['castlecss-core'], { 'save-dev': true });
 
     if (this.includeButtons) {
@@ -151,4 +153,4 @@ module.exports = generators.Base.extend({
       this.npmInstall(['castlecss-notifications'], { 'save-dev': true });
     }
   }
-});
+};
