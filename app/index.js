@@ -8,9 +8,21 @@ module.exports = generators.Base.extend({
 
   constructor: function () {
     generators.Base.apply(this, arguments);
-    this.option('projectname', { type: String, required: false });
-    this.option('features', { type: String, required: false });
-    this.option('buildsystem', { type: String, required: false });
+    this.option('projectname', {
+      type: String,
+      required: false,
+      desc: "Name of the project."
+    });
+    this.option('features', {
+      type: String,
+      required: false,
+      desc: "Comma-seperated list of optional features. Possible values: castlecss-options, castlecss-notifications"
+    });
+    this.option('buildsystem', {
+      type: String,
+      required: false,
+      desc: "The build system to use. Possible values: grunt, gulp, none"
+    });
   },
 
   prompting: function () {
