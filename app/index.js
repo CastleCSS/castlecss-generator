@@ -10,6 +10,12 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
+    this.option('destinationpath', {
+      type: String,
+      required: false,
+      desc: "The path in which the generator will create files."
+    });
+
     this.option('projectname', {
       type: String,
       required: false,
@@ -103,6 +109,10 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    if (this.options['destinationpath']) {
+      this.destinationRoot(this.options['destinationpath']);
+    }
+
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('package.json'),
